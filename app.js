@@ -1,33 +1,77 @@
-const createError = require('http-errors');
-const express = require('express');
-const path = require('path');
-const cookieParser = require('cookie-parser');
-const logger = require('morgan');
-// include ref for handlebars - getting ReferenceError: hbs is not defined
+require('dotenv').config();
+
+var createError = require('http-errors');
+var express = require('express');
+var path = require('path');
+var cookieParser = require('cookie-parser');
+var logger = require('morgan');
+// include reference to handlebars code
 const hbs = require('hbs');
+const passport = require('passport');
+// set up database connection
+require('./app_api/models/db');
+
+require('./app_api/config/passport');
+
 
 const indexRouter = require('./app_server/routes/index');
 const usersRouter = require('./app_server/routes/users');
 const travelRouter = require('./app_server/routes/travel');
+const contactRouter = require('./app_server/routes/contact');
+const newsRouter = require('./app_server/routes/news');
+const roomsRouter = require('./app_server/routes/rooms');
+const reservationsRouter = require('./app_server/routes/reservations');
+const loginRouter = require('./app_server/routes/login');
+const registerRouter = require('./app_server/routes/register');
+const checkoutRouter = require('./app_server/routes/checkout');
+const apiRouter = require('./app_api/routes/index');
 
 const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'app_server', 'views'));
-app.set('view engine', 'hbs');
+    
+// register handlebars partials (https://npmjs.com/package/hbs)
+hbs.registerPartials(path.join(__dirname, 'app_server', 'views/partials'))
 
-// register handlebars partials (https://www.npmjs.com/package/hbs)
-hbs.registerPartials(path.join(__dirname, 'app_server', 'views/partials'));
+app.set('view engine', 'hbs');
 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(passport.initialize());
 
-app.use('/', indexRouter);
+//allow CORS
+app.use('/api', (req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'http://localhost:4200');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  next();
+});
+
+
+app.use('/index', indexRouter);
 app.use('/users', usersRouter);
 app.use('/travel', travelRouter);
+app.use('/contact', contactRouter);
+app.use('/news', newsRouter);
+app.use('/rooms', roomsRouter);
+app.use('/reservations', reservationsRouter);
+app.use('/login', loginRouter);
+app.use('/register', registerRouter);
+app.use('/checkout', checkoutRouter);
+app.use('/api', apiRouter);
+
+//catch unauthorized error and create 401
+app.use((err, req, res, next) => {
+  if (err.name === 'UnauthorizedError') {
+    res
+      .status(401)
+      .json({"message": err.name + ": " + err.message});
+  }
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!-- Website template by freewebsitetemplates.com -->
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Rooms - Travlr Getaways Website Template</title>
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+<body>
+	<div id="background">
+		<div id="page">
+			<div id="header">
+				<div id="logo">
+					<a href="index.html"><img src="images/logo.png" alt="LOGO" height="100" width="200"></a>
+				</div>
+				<div id="navigation">
+					<ul>
+						<li class="selected">
+							<a href=http://localhost:3000>Home</a>
+						</li>
+						<li>
+							<a href="/travel">Travel</a>
+						</li>
+						<li>
+							<a href="/news">News</a>
+						</li>
+						<li>
+							<a href="/rooms">Reservations</a>
+						</li>
+						<li>
+							<a href= http://localhost:4200/login >Admin</a>
+						</li>
+						<li>
+							<a href="/checkout">Checkout</a>
+						</li>
+						<li>
+							<a href="/login">Login</a>
+						</li>
+					
+					</ul>
+				</div>
+			</div>
+			<div id="contents">
+				<div class="box">
+					<div>
+						<div class="body">
+							<h1>My Reservations</h1>
+							<ul id="reservations">
+								{{#each reservations}}
+								<li>
+									<a href="/reservations"><img src="images/{{this.image}}" alt="Img"></a>
+									<h2><a href="/reservations">{{this.name}}</a></h2>
+									<div>
+										Cost Per Person: {{this.perPerson}} <br>
+										Resort:          {{this.resort}} <br>
+										Start Date:      {{this.start}} <br>
+										Length of Stay:  {{this.length}} <br><br>	
+									</div>								
+								</li>
+								{{/each}}
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="footer">
+			<div>
+				<ul class="navigation">
+					<li>
+						<a href="index.html">Home</a>
+					</li>
+					<li>
+						<a href="travel.html">Travele</a>
+					</li>
+					<li class="active">
+						<a href="rooms.html">Rooms</a>
+					</li>
+					<li>
+						<a href="meals.html">Meals</a>
+					</li>
+					<li>
+						<a href="news.html">News</a>
+					</li>
+					<li>
+						<a href="about.html">About</a>
+					</li>
+					<li>
+						<a href="contact.html">Contact</a>
+					</li>
+				</ul>
+				<div id="connect">
+					<a href="http://pinterest.com/fwtemplates/" target="_blank" class="pinterest"></a> <a href="http://freewebsitetemplates.com/go/facebook/" target="_blank" class="facebook"></a> <a href="http://freewebsitetemplates.com/go/twitter/" target="_blank" class="twitter"></a> <a href="http://freewebsitetemplates.com/go/googleplus/" target="_blank" class="googleplus"></a>
+				</div>
+			</div>
+			<p>
+				© 2023 by Travlr Getaways. All Rights Reserved
+			</p>
+		</div>
+	</div>
+</body>
+</html>

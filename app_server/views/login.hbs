@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<!-- Website template by freewebsitetemplates.com -->
+<html>
+	<style>
+    /*add full-width input fields*/
+     
+    input[type=text],
+    input[type=password] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 2px solid #ccc;
+        box-sizing: border-box;
+    }
+    /* set a style for all buttons*/
+     
+    button {
+        background-color: rgb(12, 47, 204);
+        color: white;
+        padding: 15px 20px;
+        margin: 8px 0;
+        cursor: pointer;
+        width: 100%;
+    }
+    /*set styles for the cancel button*/
+     
+    .cancelbtn {
+        padding: 15px 20px;
+        background-color: #FF2E00;
+    }
+    /*float cancel and signup buttons and add an equal width*/
+     
+    .cancelbtn,
+    .signupbtn {
+        float: left;
+        width: 50%;
+    }
+    /*add padding to container elements*/
+     
+    .container {
+        padding: 16px;
+    }
+    /*clear floats*/
+     
+    .clearfix::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+    /*styles for cancel button and signup button
+      on extra small screens*/
+     
+    @media screen and (max-width: 300px) {
+        .cancelbtn,
+        .signupbtn {
+            width: 100%;
+        }
+    }
+</style>
+<head>
+	<meta charset="UTF-8">
+	<title>Contact - Travlr Getaways Website Template</title>
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+<body>
+	<div id="background">
+		<div id="page">
+			<div id="header">
+				<div id="logo">
+					<a href="index.html"><img src="images/logo.png" alt="LOGO" height="100" width="200"></a>
+				</div>
+				<div id="navigation">
+					<ul>
+						<li>
+							<a href=http://localhost:3000>Home</a>
+						</li>
+						<li>
+							<a href="/travel">Travel</a>
+						</li>
+						<li>
+							<a href="/news">News</a>
+						</li>
+						<li>
+							<a href="/reservations">Reservations</a>
+						</li>
+						<li>
+							<a href= http://localhost:4200/login >Admin</a>
+						</li>
+						<li>
+							<a href="/checkout">Checkout</a>
+						</li>
+						<li class="selected">
+							<a href="/login">Login</a>
+						</li>
+					
+					</ul>
+				</div>
+			</div>
+			<div id="contents">
+				<div class="box">
+					<div>
+						<div id="contact" class="body">
+							<h1>Login</h1>
+							<div class="row">
+                        <div class="col-12 col-md-8">
+                           <form>
+                              <div role="alert" *ngIf="formErrors" class="alert alert-danger">{{ formError }}</div>
+                              <div class="form-group">
+                                 <label for="email">Email Address</label>
+                                 <input type="email" class="form-control" id="email" name="email" placeholder="Enter email address">
+                              </div>
+                              <div class="form-group">
+                                 <label for="password">Password</label>
+                                 <input type="password" class="form-control" id="password" name="password" placeholder="e.g 12+ alphanumerics">
+	
+                              </div>
+                              <button type="submit" role="button" class="btn btnprimary" onclick="alert('Login - Under Construction')">Sign In!</button> 
+							  &emsp;
+							  <button type="submit" role="button" class="btn btnprimary" onclick="alert('Forgot Password - Under Construction')">Forgot Password?</button>
+							  <br></br>
+							  
+							   <div class="form-group">
+                                 <a href="/register">Join the Travlr Family!</a>
+                              </div>
+							
+                           </form>
+						   
+                        </div>
+                     </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div id="footer">
+			<div>
+				<ul class="navigation">
+					<li>
+						<a href="/index">Home</a>
+					</li>
+					<li>
+						<a href="/travel">Travel</a>
+					</li>
+					<li>
+						<a href="/rooms">Rooms</a>
+					</li>
+				
+					<li>
+						<a href="/news">News</a>
+					</li>
+					<li>
+						<a href='/about'>About</a>
+					</li>
+					<li class="active">
+						<a href="/contact">Contact</a>
+					</li>
+				</ul>
+				<div id="connect">
+					<a href="http://pinterest.com/fwtemplates/" target="_blank" class="pinterest"></a> <a href="http://freewebsitetemplates.com/go/facebook/" target="_blank" class="facebook"></a> <a href="http://freewebsitetemplates.com/go/twitter/" target="_blank" class="twitter"></a> <a href="http://freewebsitetemplates.com/go/googleplus/" target="_blank" class="googleplus"></a>
+				</div>
+			</div>
+			<p>
+				© 2023 by Travlr Getaways. All Rights Reserved
+			</p>
+		</div>
+	</div>
+</body>
+</html>

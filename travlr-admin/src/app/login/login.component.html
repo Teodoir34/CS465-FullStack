@@ -1,0 +1,21 @@
+<div class="row">
+   <div class="col-12 col-md-8">
+      <h2>Please Log In to Continue</h2>
+      <form (ngSubmit)="onLoginSubmit(evt)">
+         <div role="alert" *ngIf="formErrors" class="alert alert-danger">{{ formError }}</div>
+         <div class="form-group">
+            <label for="email">Aministrator Email</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Please enter your email address" [(ngModel)]="credentials.email">
+         </div>
+         <div class="form-group">
+            <label for="password">Administrator Password</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Must be 12+ alphanumeric" [(ngModel)]="credentials.password">
+         </div>
+         <button type="submit" role="button" class="btn btnprimary">Sign In!</button> 
+         
+         <div class="form-group">
+            <a href="http://localhost:3000/register">Join the Travlr Family!</a>
+         </div>
+      </form>
+   </div>
+ </div>

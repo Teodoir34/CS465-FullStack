@@ -1,0 +1,25 @@
+{
+   "1":{
+         "user": "Teodoir.oceallaigh@snhu.edu",
+            "code": "4",
+            "name": "Something",
+            "length": "3 days",
+            "start": "2023-03-25T08:00:00Z",
+            "resort": "Chicken Nuggets",
+            "perPerson": "498",
+            "image": "kayak.jpg",
+            "description": "it is definitely a description here"
+          },
+   "2":{
+      "user": "Teodoir.oceallaigh@snhu.edu",
+            "code": "5",
+            "name": "Jeremy",
+            "length": "3 days",
+            "start": "2023-03-20T08:00:00Z",
+            "resort": "Im not sure",
+            "perPerson": "135",
+            "image": "kayak.jpg",
+            "description": "something about it"
+            
+          }
+}

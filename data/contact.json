@@ -1,0 +1,14 @@
+[
+    {
+        "heading": "<span>Address:</span>",
+        "content": "123 Lorem Ipsum Cove, Sed Ut City, LI 12345"
+    },
+    {
+        "heading": "<span>Phone Number:</span>",
+        "content": "1-800-867-5309"
+    },
+    {
+        "heading": "<span>Fax Number:</span>",
+        "content": "1-800-555-6655"
+    }
+]
